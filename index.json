@@ -40,8 +40,8 @@
     {
       "id": "input",
       "name": "Input Language",
-      "version": "1.0.0",
-      "description": "Switches to one of your enabled keyboard layouts / input languages.",
+      "version": "1.1.0",
+      "description": "Switches to one of your enabled keyboard layouts / input languages, or cycles through them.",
       "platforms": [],
       "files": [
         "plugin.json"
