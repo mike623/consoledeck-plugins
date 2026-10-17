@@ -1,0 +1,9 @@
+{
+  "id": "boosteroid",
+  "name": "Boosteroid Game",
+  "version": "1.0.0",
+  "description": "Tells ConsoleDeck which game Boosteroid is streaming, so each game can have its own profile (Boosteroid · Last Epoch). Add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default.",
+  "platforms": ["mac"],
+  "contextFor": ["com.boosteroid.macclient"],
+  "live": { "exec": ["/bin/sh", "./game.sh"] }
+}

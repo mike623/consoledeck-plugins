@@ -18,6 +18,7 @@ inside the app, so a fresh install works offline.
 | `cpu` CPU Usage | phone tile: CPU usage, with a chart |
 | `memory` Memory Usage | phone tile: memory used, like Activity Monitor, with a chart |
 | `network` Network Usage | phone tile: download/upload speed, with a chart |
+| `boosteroid` Boosteroid Game | a profile per game streamed in Boosteroid (Mac) |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 
@@ -49,6 +50,8 @@ buttons store it as their `"type"` in deck.json.
 | `fields` | what the editor asks for (below). The first field's value is stored as the button's `value`, others in `values` |
 | `label` | deck / cheat sheet label with `{field}` placeholders; default is the first field's value. A filled-in field with id `name` wins over both |
 | `run` | what a press does (below) |
+| `live` | a long-running `exec` whose output lines show on a phone tile (`cpu`) |
+| `contextFor` | app ids; the `live` command prints what's on in that app (a game), or an empty line for nothing. While that app is in front, ConsoleDeck uses the profile `<app id>/<line>`, falling back to the app's own (`boosteroid`) |
 
 ### Fields
 
