@@ -14,7 +14,7 @@ while :; do
     fi
     action=$(get "$job" action)
     case $(get "$job" state) in
-      running) count=$(get "$job" output); line=$( [ "${count:-0}" -gt 0 ] && get "$job" output.$((count - 1)) || echo "$action…") ;;
+      running) count=$(get "$job" output); line=$( [ "${count:-0}" -gt 0 ] && get "$job" output.$((count - 1)) || echo "${action}…") ;;
       done) line="✓ $action" ;;
       failed) line="✗ $action" ;;
       *) line=$level ;;
