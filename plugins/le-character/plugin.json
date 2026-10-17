@@ -1,0 +1,134 @@
+{
+  "id": "le-character",
+  "name": "Last Epoch Character",
+  "version": "1.0.0",
+  "description": "Phone tiles with your Last Epoch character's stats from le-scanner (github.com/mike623/le-tool): level, deaths, playtime, health, resistances... One tile per stat: add it under Phone shows. Updates within 10 s of an import.",
+  "platforms": [
+    "mac"
+  ],
+  "fields": [
+    {
+      "id": "stat",
+      "label": "Stat",
+      "type": "select",
+      "options": [
+        {
+          "value": "level",
+          "label": "Level"
+        },
+        {
+          "value": "deaths",
+          "label": "Deaths"
+        },
+        {
+          "value": "playtime_s",
+          "label": "Playtime"
+        },
+        {
+          "value": "cycle",
+          "label": "Cycle"
+        },
+        {
+          "value": "sheet.Health",
+          "label": "Health"
+        },
+        {
+          "value": "sheet.Mana",
+          "label": "Mana"
+        },
+        {
+          "value": "sheet.Health Regen",
+          "label": "Health Regen"
+        },
+        {
+          "value": "sheet.Mana Regen",
+          "label": "Mana Regen"
+        },
+        {
+          "value": "sheet.Armor",
+          "label": "Armor"
+        },
+        {
+          "value": "sheet.Armor Mitigation",
+          "label": "Armor Mit."
+        },
+        {
+          "value": "sheet.Dodge Rating",
+          "label": "Dodge Rating"
+        },
+        {
+          "value": "sheet.Dodge Chance",
+          "label": "Dodge"
+        },
+        {
+          "value": "sheet.Block Chance",
+          "label": "Block"
+        },
+        {
+          "value": "sheet.Block Mitigation",
+          "label": "Block Mit."
+        },
+        {
+          "value": "sheet.Movement Speed",
+          "label": "Move Speed"
+        },
+        {
+          "value": "sheet.Fire Resistance",
+          "label": "Fire Res"
+        },
+        {
+          "value": "sheet.Cold Resistance",
+          "label": "Cold Res"
+        },
+        {
+          "value": "sheet.Lightning Resistance",
+          "label": "Lightning Res"
+        },
+        {
+          "value": "sheet.Physical Resistance",
+          "label": "Physical Res"
+        },
+        {
+          "value": "sheet.Necrotic Resistance",
+          "label": "Necrotic Res"
+        },
+        {
+          "value": "sheet.Poison Resistance",
+          "label": "Poison Res"
+        },
+        {
+          "value": "sheet.Void Resistance",
+          "label": "Void Res"
+        },
+        {
+          "value": "sheet.Strength",
+          "label": "Strength"
+        },
+        {
+          "value": "sheet.Dexterity",
+          "label": "Dexterity"
+        },
+        {
+          "value": "sheet.Intelligence",
+          "label": "Intelligence"
+        },
+        {
+          "value": "sheet.Attunement",
+          "label": "Attunement"
+        },
+        {
+          "value": "sheet.Vitality",
+          "label": "Vitality"
+        }
+      ]
+    }
+  ],
+  "label": "{stat}",
+  "live": {
+    "exec": [
+      "/bin/sh",
+      "./stat.sh",
+      "{stat}"
+    ]
+  }
+}

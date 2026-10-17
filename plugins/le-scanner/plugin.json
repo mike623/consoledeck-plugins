@@ -1,8 +1,8 @@
 {
   "id": "le-scanner",
   "name": "Last Epoch Scanner",
-  "version": "1.0.0",
-  "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use. Needs `le-scanner overlay` or `serve` running. As a phone tile it shows the running action, or your character's level.",
+  "version": "1.1.0",
+  "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use. Needs `le-scanner overlay` or `serve` running. As a phone tile it shows the running action; character stats are the Last Epoch Character tiles.",
   "platforms": ["mac"],
   "fields": [
     { "id": "action", "label": "Action", "type": "select", "options": [

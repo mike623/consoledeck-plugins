@@ -20,6 +20,7 @@ inside the app, so a fresh install works offline.
 | `network` Network Usage | phone tile: download/upload speed, with a chart |
 | `boosteroid` Boosteroid Game | a profile per game streamed in Boosteroid (Mac) |
 | `le-scanner` Last Epoch Scanner | runs [le-scanner](https://github.com/mike623/le-tool) actions; phone tile shows progress (Mac) |
+| `le-character` Last Epoch Character | phone tiles with le-scanner's character stats: level, health, resistances... (Mac) |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 
@@ -51,7 +52,7 @@ buttons store it as their `"type"` in deck.json.
 | `fields` | what the editor asks for (below). The first field's value is stored as the button's `value`, others in `values` |
 | `label` | deck / cheat sheet label with `{field}` placeholders; default is the first field's value. A filled-in field with id `name` wins over both |
 | `run` | what a press does (below) |
-| `live` | a long-running `exec` whose output lines show on a phone tile (`cpu`) |
+| `live` | a long-running `exec` whose output lines show on a phone tile (`cpu`). A tile-only plugin whose first field is a `select` is added once per option, labelled by it (`le-character`) |
 | `contextFor` | app ids; the `live` command prints what's on in that app (a game), or an empty line for nothing. While that app is in front, ConsoleDeck uses the profile `<app id>/<line>`, falling back to the app's own (`boosteroid`) |
 
 ### Fields
