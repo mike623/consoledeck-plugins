@@ -1,0 +1,9 @@
+{
+  "id": "password",
+  "name": "Type Password",
+  "version": "1.0.0",
+  "description": "Types a password into the app in front. Stored encrypted, shown masked.",
+  "fields": [{ "id": "password", "label": "Password", "type": "password" }],
+  "note": "Saved encrypted in deck.json (key in secret.key beside it) and shown masked.",
+  "run": { "password": "{password}" }
+}

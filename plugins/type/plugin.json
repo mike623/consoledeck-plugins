@@ -1,0 +1,9 @@
+{
+  "id": "type",
+  "name": "Type Text",
+  "version": "1.0.0",
+  "description": "Types text into the app in front.",
+  "fields": [{ "id": "text", "label": "Text", "type": "textarea", "placeholder": "Typed into the app in front" }],
+  "label": "“{text}”",
+  "run": { "type": "{text}" }
+}

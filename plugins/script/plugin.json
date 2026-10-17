@@ -1,0 +1,8 @@
+{
+  "id": "script",
+  "name": "Run Script",
+  "version": "1.0.0",
+  "description": "Runs a command line you type, with bash on Mac and cmd on Windows, from your home folder.",
+  "fields": [{ "id": "command", "label": "Command", "type": "textarea", "monospace": true, "placeholder": "~/bin/thing.sh" }],
+  "run": { "shell": "{command}" }
+}

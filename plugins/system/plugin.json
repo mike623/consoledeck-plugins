@@ -1,0 +1,27 @@
+{
+  "id": "system",
+  "name": "System",
+  "version": "1.0.0",
+  "description": "Lock, sleep, volume, input language, log out, restart and shut down.",
+  "fields": [{ "id": "action", "label": "Action", "type": "select", "options": [
+    { "value": "lock", "label": "Lock Screen",
+      "run": { "mac": { "keys": "ctrl+cmd+q" }, "windows": { "exec": ["rundll32.exe", "user32.dll,LockWorkStation"] } } },
+    { "value": "sleep", "label": "Sleep",
+      "run": { "mac": { "exec": ["/usr/bin/pmset", "sleepnow"] }, "windows": { "exec": ["rundll32.exe", "powrprof.dll,SetSuspendState", "0,1,0"] } } },
+    { "value": "displaysleep", "label": "Turn Display Off",
+      "run": { "mac": { "exec": ["/usr/bin/pmset", "displaysleepnow"] },
+               "windows": { "exec": ["powershell", "-NoProfile", "-Command", "(Add-Type '[DllImport(\"user32.dll\")]public static extern int SendMessage(int h,int m,int w,int l);' -Name W -PassThru)::SendMessage(0xffff,0x0112,0xF170,2)"] } } },
+    { "value": "screensaver", "label": "Start Screen Saver",
+      "run": { "mac": { "exec": ["/usr/bin/open", "-a", "ScreenSaverEngine"] }, "windows": { "exec": ["scrnsave.scr", "/s"] } } },
+    { "value": "inputsource", "label": "Next Input Language", "run": { "input": "next" } },
+    { "value": "mute", "label": "Mute / Unmute", "run": { "media": "mute" } },
+    { "value": "volumeup", "label": "Volume Up", "run": { "media": "volumeup" } },
+    { "value": "volumedown", "label": "Volume Down", "run": { "media": "volumedown" } },
+    { "value": "logout", "label": "Log Out…",
+      "run": { "mac": { "exec": ["/usr/bin/osascript", "-e", "tell application \"loginwindow\" to «event aevtlogo»"] }, "windows": { "exec": ["shutdown", "/l"] } } },
+    { "value": "restart", "label": "Restart…", "note": "Mac asks first. Windows restarts after 15 seconds; shutdown /a cancels.",
+      "run": { "mac": { "exec": ["/usr/bin/osascript", "-e", "tell application \"loginwindow\" to «event aevtrrst»"] }, "windows": { "exec": ["shutdown", "/r", "/t", "15"] } } },
+    { "value": "shutdown", "label": "Shut Down…", "note": "Mac asks first. Windows shuts down after 15 seconds; shutdown /a cancels.",
+      "run": { "mac": { "exec": ["/usr/bin/osascript", "-e", "tell application \"loginwindow\" to «event aevtrsdn»"] }, "windows": { "exec": ["shutdown", "/s", "/t", "15"] } } }
+  ] }]
+}

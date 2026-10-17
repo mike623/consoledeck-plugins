@@ -1,0 +1,8 @@
+{
+  "id": "app",
+  "name": "Open App",
+  "version": "1.0.0",
+  "description": "Opens or brings forward an app.",
+  "fields": [{ "id": "app", "label": "App", "type": "app", "placeholder": "Safari / notepad" }],
+  "run": { "app": "{app}" }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "vpn",
+  "name": "Toggle VPN",
+  "version": "1.0.0",
+  "description": "Connects a Tunnelblick (OpenVPN) configuration, or disconnects it when it's up.",
+  "platforms": ["mac"],
+  "fields": [{ "id": "config", "label": "Tunnelblick VPN", "type": "select", "optionsFrom": ["/bin/bash", "./configs.sh"],
+    "button": { "label": "Import .ovpn…", "pickFile": ["ovpn", "conf"], "exec": ["/bin/bash", "./import.sh", "{file}"] } }],
+  "note": "Needs Tunnelblick (tunnelblick.net). Connect once from Tunnelblick's menu and tick Save in Keychain so the button doesn't ask for the username and password.",
+  "label": "VPN {config}",
+  "run": { "exec": ["/bin/bash", "./toggle.sh", "{config}"] }
+}

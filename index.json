@@ -1,0 +1,187 @@
+{
+  "plugins": [
+    {
+      "id": "app",
+      "name": "Open App",
+      "version": "1.0.0",
+      "description": "Opens or brings forward an app.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "input",
+      "name": "Input Language",
+      "version": "1.0.0",
+      "description": "Switches to one of your enabled keyboard layouts / input languages.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "key",
+      "name": "Press Keys",
+      "version": "1.0.0",
+      "description": "Presses a key combo in the app in front.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "password",
+      "name": "Type Password",
+      "version": "1.0.0",
+      "description": "Types a password into the app in front. Stored encrypted, shown masked.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "script",
+      "name": "Run Script",
+      "version": "1.0.0",
+      "description": "Runs a command line you type, with bash on Mac and cmd on Windows, from your home folder.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "system",
+      "name": "System",
+      "version": "1.0.0",
+      "description": "Lock, sleep, volume, input language, log out, restart and shut down.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "rundll32.exe",
+          "user32.dll,LockWorkStation"
+        ],
+        [
+          "rundll32.exe",
+          "powrprof.dll,SetSuspendState",
+          "0,1,0"
+        ],
+        [
+          "/usr/bin/pmset",
+          "sleepnow"
+        ],
+        [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Add-Type '[DllImport(\"user32.dll\")]public static extern int SendMessage(int h,int m,int w,int l);' -Name W -PassThru)::SendMessage(0xffff,0x0112,0xF170,2)"
+        ],
+        [
+          "/usr/bin/pmset",
+          "displaysleepnow"
+        ],
+        [
+          "scrnsave.scr",
+          "/s"
+        ],
+        [
+          "/usr/bin/open",
+          "-a",
+          "ScreenSaverEngine"
+        ],
+        [
+          "shutdown",
+          "/l"
+        ],
+        [
+          "/usr/bin/osascript",
+          "-e",
+          "tell application \"loginwindow\" to «event aevtlogo»"
+        ],
+        [
+          "shutdown",
+          "/r",
+          "/t",
+          "15"
+        ],
+        [
+          "/usr/bin/osascript",
+          "-e",
+          "tell application \"loginwindow\" to «event aevtrrst»"
+        ],
+        [
+          "shutdown",
+          "/s",
+          "/t",
+          "15"
+        ],
+        [
+          "/usr/bin/osascript",
+          "-e",
+          "tell application \"loginwindow\" to «event aevtrsdn»"
+        ]
+      ]
+    },
+    {
+      "id": "type",
+      "name": "Type Text",
+      "version": "1.0.0",
+      "description": "Types text into the app in front.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "url",
+      "name": "Open URL",
+      "version": "1.0.0",
+      "description": "Opens a web page, or an app link like zoommtg:// or spotify:, in its default app.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
+      "id": "vpn",
+      "name": "Toggle VPN",
+      "version": "1.0.0",
+      "description": "Connects a Tunnelblick (OpenVPN) configuration, or disconnects it when it's up.",
+      "platforms": [
+        "mac"
+      ],
+      "files": [
+        "configs.sh",
+        "import.sh",
+        "plugin.json",
+        "toggle.sh"
+      ],
+      "commands": [
+        [
+          "/bin/bash",
+          "./toggle.sh",
+          "{config}"
+        ],
+        [
+          "/bin/bash",
+          "./configs.sh"
+        ],
+        [
+          "/bin/bash",
+          "./import.sh",
+          "{file}"
+        ]
+      ]
+    }
+  ]
+}

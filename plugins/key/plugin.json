@@ -1,0 +1,8 @@
+{
+  "id": "key",
+  "name": "Press Keys",
+  "version": "1.0.0",
+  "description": "Presses a key combo in the app in front.",
+  "fields": [{ "id": "keys", "label": "Keys", "type": "keys" }],
+  "run": { "keys": "{keys}" }
+}

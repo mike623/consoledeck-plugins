@@ -1,0 +1,8 @@
+{
+  "id": "input",
+  "name": "Input Language",
+  "version": "1.0.0",
+  "description": "Switches to one of your enabled keyboard layouts / input languages.",
+  "fields": [{ "id": "language", "label": "Language", "type": "select", "optionsFrom": ["inputSources"] }],
+  "run": { "input": "{language}" }
+}

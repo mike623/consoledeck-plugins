@@ -1,0 +1,8 @@
+{
+  "id": "url",
+  "name": "Open URL",
+  "version": "1.0.0",
+  "description": "Opens a web page, or an app link like zoommtg:// or spotify:, in its default app.",
+  "fields": [{ "id": "url", "label": "URL", "type": "url", "placeholder": "https://example.com" }],
+  "run": { "url": "{url}" }
+}
