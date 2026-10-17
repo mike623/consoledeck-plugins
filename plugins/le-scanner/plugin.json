@@ -1,0 +1,27 @@
+{
+  "id": "le-scanner",
+  "name": "Last Epoch Scanner",
+  "version": "1.0.0",
+  "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use. Needs `le-scanner overlay` or `serve` running. As a phone tile it shows the running action, or your character's level.",
+  "platforms": ["mac"],
+  "fields": [
+    { "id": "action", "label": "Action", "type": "select", "options": [
+      { "value": "scan-all", "label": "Scan All Tabs" },
+      { "value": "scan-tab", "label": "Scan Open Tab", "note": "Pick which tab is open below." },
+      { "value": "snap", "label": "Screenshot (5 s)" },
+      { "value": "calibrate", "label": "Calibrate" },
+      { "value": "import", "label": "Import Character" },
+      { "value": "apply", "label": "Equip Build in Use" },
+      { "value": "unuse", "label": "Clear Build in Use" }
+    ] },
+    { "id": "tab", "label": "Tab", "type": "select", "options": [
+      { "value": "ring", "label": "Ring" }, { "value": "amu", "label": "Amulet" }, { "value": "belt", "label": "Belt" },
+      { "value": "helmet", "label": "Helmet" }, { "value": "body", "label": "Body" }, { "value": "gloves", "label": "Gloves" },
+      { "value": "boots", "label": "Boots" }, { "value": "relic", "label": "Relic" }
+    ] }
+  ],
+  "note": "Only Scan Open Tab uses Tab. Progress shows on the phone with the Last Epoch Scanner tile.",
+  "label": "LE {action}",
+  "run": { "exec": ["/bin/sh", "./run.sh", "{action}", "{tab}"] },
+  "live": { "exec": ["/bin/sh", "./status.sh"] }
+}

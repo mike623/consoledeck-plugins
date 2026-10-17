@@ -79,6 +79,32 @@
       "commands": []
     },
     {
+      "id": "le-scanner",
+      "name": "Last Epoch Scanner",
+      "version": "1.0.0",
+      "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use. Needs `le-scanner overlay` or `serve` running. As a phone tile it shows the running action, or your character's level.",
+      "platforms": [
+        "mac"
+      ],
+      "files": [
+        "plugin.json",
+        "run.sh",
+        "status.sh"
+      ],
+      "commands": [
+        [
+          "/bin/sh",
+          "./run.sh",
+          "{action}",
+          "{tab}"
+        ],
+        [
+          "/bin/sh",
+          "./status.sh"
+        ]
+      ]
+    },
+    {
       "id": "memory",
       "name": "Memory Usage",
       "version": "1.2.0",

@@ -19,6 +19,7 @@ inside the app, so a fresh install works offline.
 | `memory` Memory Usage | phone tile: memory used, like Activity Monitor, with a chart |
 | `network` Network Usage | phone tile: download/upload speed, with a chart |
 | `boosteroid` Boosteroid Game | a profile per game streamed in Boosteroid (Mac) |
+| `le-scanner` Last Epoch Scanner | runs [le-scanner](https://github.com/mike623/le-tool) actions; phone tile shows progress (Mac) |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 
