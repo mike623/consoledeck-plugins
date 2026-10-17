@@ -70,13 +70,17 @@
           "user32.dll,LockWorkStation"
         ],
         [
+          "/usr/bin/pmset",
+          "sleepnow"
+        ],
+        [
           "rundll32.exe",
           "powrprof.dll,SetSuspendState",
           "0,1,0"
         ],
         [
           "/usr/bin/pmset",
-          "sleepnow"
+          "displaysleepnow"
         ],
         [
           "powershell",
@@ -85,17 +89,18 @@
           "(Add-Type '[DllImport(\"user32.dll\")]public static extern int SendMessage(int h,int m,int w,int l);' -Name W -PassThru)::SendMessage(0xffff,0x0112,0xF170,2)"
         ],
         [
-          "/usr/bin/pmset",
-          "displaysleepnow"
+          "/usr/bin/open",
+          "-a",
+          "ScreenSaverEngine"
         ],
         [
           "scrnsave.scr",
           "/s"
         ],
         [
-          "/usr/bin/open",
-          "-a",
-          "ScreenSaverEngine"
+          "/usr/bin/osascript",
+          "-e",
+          "tell application \"loginwindow\" to «event aevtlogo»"
         ],
         [
           "shutdown",
@@ -104,7 +109,7 @@
         [
           "/usr/bin/osascript",
           "-e",
-          "tell application \"loginwindow\" to «event aevtlogo»"
+          "tell application \"loginwindow\" to «event aevtrrst»"
         ],
         [
           "shutdown",
@@ -115,18 +120,13 @@
         [
           "/usr/bin/osascript",
           "-e",
-          "tell application \"loginwindow\" to «event aevtrrst»"
+          "tell application \"loginwindow\" to «event aevtrsdn»"
         ],
         [
           "shutdown",
           "/s",
           "/t",
           "15"
-        ],
-        [
-          "/usr/bin/osascript",
-          "-e",
-          "tell application \"loginwindow\" to «event aevtrsdn»"
         ]
       ]
     },
