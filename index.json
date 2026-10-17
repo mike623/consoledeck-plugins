@@ -88,8 +88,8 @@
     {
       "id": "network",
       "name": "Network Usage",
-      "version": "1.1.0",
-      "description": "Shows download and upload speed, updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
+      "version": "1.2.0",
+      "description": "Shows download and upload speed, with a chart (download green, upload red), updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
       "platforms": [],
       "files": [
         "network.ps1",

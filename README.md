@@ -17,7 +17,7 @@ inside the app, so a fresh install works offline.
 | `vpn` Toggle VPN | connects / disconnects a Tunnelblick VPN (Mac) |
 | `cpu` CPU Usage | phone tile: CPU usage, with a chart |
 | `memory` Memory Usage | phone tile: memory used, like Activity Monitor, with a chart |
-| `network` Network Usage | phone tile: download/upload speed |
+| `network` Network Usage | phone tile: download/upload speed, with a chart |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 
@@ -83,8 +83,9 @@ A select option's own `run` wins over the plugin's.
 `live` is a command that keeps running (`exec`, or per-OS `exec` under `mac` / `windows`). Each line it prints becomes
 the text of a tile on the Phone Companion, shown apart from the buttons (**Phone shows** in the Actions window). It runs
 only while the companion is on. A plugin with `live` needs no `run`; without one it isn't offered for buttons. Print a
-line and flush, e.g. `fflush()` in awk. A tab and a fraction from 0 to 1 after the text (`26%<TAB>0.26`, with a dot)
-adds a chart of the last minute under it.
+line and flush, e.g. `fflush()` in awk. Tab-separated numbers after the text (`26%<TAB>0.26`, with a dot) add a chart of the
+last minute under it, one line per number (green, then red). Its top is 1, or the biggest number shown, so give 0 to 1
+for a share, or raw values like bytes per second.
 
 ```json
 "live": { "mac": { "exec": ["/bin/sh", "./cpu.sh"] }, "windows": { "exec": ["powershell", "-File", "./cpu.ps1"] } }
