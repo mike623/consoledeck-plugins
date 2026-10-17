@@ -47,7 +47,7 @@ buttons store it as their `"type"` in deck.json.
 | `version` | `1.2.3`; bump it for ConsoleDeck to offer the update |
 | `platforms` | `mac`, `windows`; leave out for both |
 | `fields` | what the editor asks for (below). The first field's value is stored as the button's `value`, others in `values` |
-| `label` | deck / cheat sheet label with `{field}` placeholders; default is the first field's value |
+| `label` | deck / cheat sheet label with `{field}` placeholders; default is the first field's value. A filled-in field with id `name` wins over both |
 | `run` | what a press does (below) |
 
 ### Fields

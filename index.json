@@ -125,7 +125,7 @@
     {
       "id": "script",
       "name": "Run Script",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Runs a command line you type, with bash on Mac and cmd on Windows, from your home folder.",
       "platforms": [],
       "files": [
