@@ -1,7 +1,7 @@
 {
   "id": "cpu",
   "name": "CPU Usage",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Shows total CPU usage, updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
   "label": "CPU",
   "live": {

@@ -14,7 +14,7 @@
     {
       "id": "cpu",
       "name": "CPU Usage",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Shows total CPU usage, updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
       "platforms": [],
       "files": [
@@ -62,8 +62,8 @@
     {
       "id": "memory",
       "name": "Memory Usage",
-      "version": "1.1.0",
-      "description": "Shows how much RAM is in use, updated every two seconds. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
+      "version": "1.2.0",
+      "description": "Shows memory used in GB, like Activity Monitor, updated every two seconds. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
       "platforms": [],
       "files": [
         "memory.ps1",
