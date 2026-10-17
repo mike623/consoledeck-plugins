@@ -15,6 +15,7 @@ inside the app, so a fresh install works offline.
 | `input` Input Language | switches keyboard layout |
 | `system` System | lock, sleep, volume, log out, restart, shut down |
 | `vpn` Toggle VPN | connects / disconnects a Tunnelblick VPN (Mac) |
+| `cpu` CPU Usage | shows CPU usage live on the Phone Companion (display only) |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 
@@ -74,6 +75,16 @@ A select option's own `run` wins over the plugin's.
 | `keys`, `type`, `password` | press a combo / type text / type a sealed password into the app in front (needs Accessibility on Mac) |
 | `input` | switch to an input source id, or `next` |
 | `media` | `mute`, `volumeup`, `volumedown` |
+
+### Live
+
+`live` is a command that keeps running (`exec`, or per-OS `exec` under `mac` / `windows`). Each line it prints becomes
+the button's text on the Phone Companion, like a Stream Deck key title. It runs only while the companion is on and the
+button is in the profile in front. A plugin with `live` needs no `run`. Print a line and flush, e.g. `fflush()` in awk.
+
+```json
+"live": { "mac": { "exec": ["/bin/sh", "./cpu.sh"] }, "windows": { "exec": ["powershell", "-File", "./cpu.ps1"] } }
+```
 
 Plugins with commands run them as you, with no sandbox. ConsoleDeck shows every command before installing one,
 and every plugin here is reviewed before merging.

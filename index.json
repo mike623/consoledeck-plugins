@@ -12,6 +12,32 @@
       "commands": []
     },
     {
+      "id": "cpu",
+      "name": "CPU Usage",
+      "version": "1.0.0",
+      "description": "Shows total CPU usage on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
+      "platforms": [],
+      "files": [
+        "cpu.ps1",
+        "cpu.sh",
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "./cpu.ps1"
+        ],
+        [
+          "/bin/sh",
+          "./cpu.sh"
+        ]
+      ]
+    },
+    {
       "id": "input",
       "name": "Input Language",
       "version": "1.0.0",

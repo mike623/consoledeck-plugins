@@ -1,0 +1,12 @@
+{
+  "id": "cpu",
+  "name": "CPU Usage",
+  "version": "1.0.0",
+  "description": "Shows total CPU usage on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
+  "note": "Display only: pressing the button does nothing. Open Phone Companion… from the tray to see it.",
+  "label": "CPU",
+  "live": {
+    "mac": { "exec": ["/bin/sh", "./cpu.sh"] },
+    "windows": { "exec": ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "./cpu.ps1"] }
+  }
+}

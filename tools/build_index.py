@@ -62,12 +62,16 @@ def check(folder: Path):
             if "run" in o:
                 check_run(o["run"], f"option {o.get('value')}")
                 option_runs = True
+    if "live" in m:
+        check_run(m["live"], "live")
+        if any(k in WAYS - {"exec"} for r in [m["live"], *(m["live"].get(p, {}) for p in PLATFORMS)] for k in r):
+            raise ValueError("live only takes exec")
     if "run" in m:
         check_run(m["run"], "run")
-    elif not option_runs:
+    elif not option_runs and "live" not in m:
         raise ValueError("nothing to run: add run")
     files = sorted(str(p.relative_to(folder)).replace("\\", "/") for p in folder.rglob("*") if p.is_file() and p.name != ".DS_Store")
-    cmds = commands(m.get("run"))
+    cmds = commands(m.get("run")) + commands(m.get("live"))
     for f in m.get("fields", []):
         for o in f.get("options", []):
             cmds += commands(o.get("run"))
