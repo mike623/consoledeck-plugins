@@ -24,16 +24,16 @@
       ],
       "commands": [
         [
+          "/bin/sh",
+          "./cpu.sh"
+        ],
+        [
           "powershell",
           "-NoProfile",
           "-ExecutionPolicy",
           "Bypass",
           "-File",
           "./cpu.ps1"
-        ],
-        [
-          "/bin/sh",
-          "./cpu.sh"
         ]
       ]
     },

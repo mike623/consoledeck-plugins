@@ -36,7 +36,7 @@ def commands(run):
     if not run:
         return []
     out = [run["exec"]] if "exec" in run else []
-    for p in PLATFORMS & set(run):
+    for p in sorted(PLATFORMS & set(run)):
         out += commands(run[p])
     return out
 
