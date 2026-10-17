@@ -1,9 +1,8 @@
 {
   "id": "cpu",
   "name": "CPU Usage",
-  "version": "1.0.0",
-  "description": "Shows total CPU usage on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
-  "note": "Display only: pressing the button does nothing. Open Phone Companion… from the tray to see it.",
+  "version": "1.1.0",
+  "description": "Shows total CPU usage, updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
   "label": "CPU",
   "live": {
     "mac": { "exec": ["/bin/sh", "./cpu.sh"] },

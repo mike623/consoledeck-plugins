@@ -14,8 +14,8 @@
     {
       "id": "cpu",
       "name": "CPU Usage",
-      "version": "1.0.0",
-      "description": "Shows total CPU usage on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
+      "version": "1.1.0",
+      "description": "Shows total CPU usage, updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
       "platforms": [],
       "files": [
         "cpu.ps1",
@@ -62,8 +62,8 @@
     {
       "id": "memory",
       "name": "Memory Usage",
-      "version": "1.0.0",
-      "description": "Shows how much RAM is in use on the button, updated every two seconds. The deck has no screen: it shows on the Phone Companion.",
+      "version": "1.1.0",
+      "description": "Shows how much RAM is in use, updated every two seconds. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
       "platforms": [],
       "files": [
         "memory.ps1",
@@ -88,8 +88,8 @@
     {
       "id": "network",
       "name": "Network Usage",
-      "version": "1.0.0",
-      "description": "Shows download and upload speed on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
+      "version": "1.1.0",
+      "description": "Shows download and upload speed, updated every second. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
       "platforms": [],
       "files": [
         "network.ps1",
