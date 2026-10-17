@@ -60,6 +60,58 @@
       "commands": []
     },
     {
+      "id": "memory",
+      "name": "Memory Usage",
+      "version": "1.0.0",
+      "description": "Shows how much RAM is in use on the button, updated every two seconds. The deck has no screen: it shows on the Phone Companion.",
+      "platforms": [],
+      "files": [
+        "memory.ps1",
+        "memory.sh",
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "/bin/sh",
+          "./memory.sh"
+        ],
+        [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "./memory.ps1"
+        ]
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Network Usage",
+      "version": "1.0.0",
+      "description": "Shows download and upload speed on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
+      "platforms": [],
+      "files": [
+        "network.ps1",
+        "network.sh",
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "/bin/sh",
+          "./network.sh"
+        ],
+        [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "./network.ps1"
+        ]
+      ]
+    },
+    {
       "id": "password",
       "name": "Type Password",
       "version": "1.0.0",

@@ -1,0 +1,12 @@
+{
+  "id": "memory",
+  "name": "Memory Usage",
+  "version": "1.0.0",
+  "description": "Shows how much RAM is in use on the button, updated every two seconds. The deck has no screen: it shows on the Phone Companion.",
+  "note": "Display only: pressing the button does nothing. Open Phone Companion… from the tray to see it.",
+  "label": "RAM",
+  "live": {
+    "mac": { "exec": ["/bin/sh", "./memory.sh"] },
+    "windows": { "exec": ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "./memory.ps1"] }
+  }
+}

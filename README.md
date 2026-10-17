@@ -16,6 +16,8 @@ inside the app, so a fresh install works offline.
 | `system` System | lock, sleep, volume, log out, restart, shut down |
 | `vpn` Toggle VPN | connects / disconnects a Tunnelblick VPN (Mac) |
 | `cpu` CPU Usage | shows CPU usage live on the Phone Companion (display only) |
+| `memory` Memory Usage | shows RAM in use live on the Phone Companion (display only) |
+| `network` Network Usage | shows download/upload speed live on the Phone Companion (display only) |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 

@@ -1,0 +1,12 @@
+{
+  "id": "network",
+  "name": "Network Usage",
+  "version": "1.0.0",
+  "description": "Shows download and upload speed on the button, updated every second. The deck has no screen: it shows on the Phone Companion.",
+  "note": "Display only: pressing the button does nothing. Open Phone Companion… from the tray to see it.",
+  "label": "Net",
+  "live": {
+    "mac": { "exec": ["/bin/sh", "./network.sh"] },
+    "windows": { "exec": ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "./network.ps1"] }
+  }
+}
