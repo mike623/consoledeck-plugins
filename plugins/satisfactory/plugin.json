@@ -1,0 +1,15 @@
+{
+  "id": "satisfactory",
+  "name": "Satisfactory",
+  "version": "1.0.0",
+  "description": "Opens Satisfactory Calculator's blueprints, interactive map, or one blueprint's page. Put the buttons on the Boosteroid · Satisfactory profile so they show while it's streaming.",
+  "fields": [
+    { "id": "action", "label": "Open", "type": "select", "options": [
+      { "value": "blueprints", "label": "Blueprints (Satisfactory Calculator)", "run": { "url": "https://satisfactory-calculator.com/en/blueprints" } },
+      { "value": "map", "label": "Interactive Map", "run": { "url": "https://satisfactory-calculator.com/en/interactive-map" } },
+      { "value": "blueprint", "label": "Blueprint…", "note": "Paste the blueprint's page in Link below.", "run": { "url": "{link}" } }
+    ] },
+    { "id": "link", "label": "Link", "type": "url", "placeholder": "https://satisfactory-calculator.com/en/blueprints/index/details/id/…" }
+  ],
+  "note": "Only Blueprint… uses Link."
+}

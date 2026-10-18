@@ -188,6 +188,17 @@
       "commands": []
     },
     {
+      "id": "satisfactory",
+      "name": "Satisfactory",
+      "version": "1.0.0",
+      "description": "Opens Satisfactory Calculator's blueprints, interactive map, or one blueprint's page. Put the buttons on the Boosteroid · Satisfactory profile so they show while it's streaming.",
+      "platforms": [],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": []
+    },
+    {
       "id": "script",
       "name": "Run Script",
       "version": "1.1.0",

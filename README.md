@@ -21,6 +21,7 @@ inside the app, so a fresh install works offline.
 | `boosteroid` Boosteroid Game | a profile per game streamed in Boosteroid (Mac) |
 | `le-scanner` Last Epoch Scanner | runs [le-scanner](https://github.com/mike623/le-tool) actions; phone tile shows progress (Mac) |
 | `le-character` Last Epoch Character | phone tiles with le-scanner's character stats: level, health, resistances... (Mac) |
+| `satisfactory` Satisfactory | opens Satisfactory Calculator blueprints, interactive map, or one blueprint |
 
 Repeat Keys, Open Editor and Show Cheat Sheet are built into ConsoleDeck itself.
 
