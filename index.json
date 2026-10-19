@@ -122,8 +122,8 @@
     {
       "id": "le-scanner",
       "name": "Last Epoch Scanner",
-      "version": "1.1.0",
-      "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use. Needs `le-scanner overlay` or `serve` running. As a phone tile it shows the running action; character stats are the Last Epoch Character tiles.",
+      "version": "1.2.0",
+      "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use, open the planner. Needs `le-scanner overlay` or `serve` running. On the phone, the Scan All Tabs button shows whatever le-scanner is running, and each other button its own action while it runs; character stats are the Last Epoch Character tiles.",
       "platforms": [
         "mac"
       ],
@@ -141,7 +141,8 @@
         ],
         [
           "/bin/sh",
-          "./status.sh"
+          "./status.sh",
+          "{action}"
         ]
       ]
     },

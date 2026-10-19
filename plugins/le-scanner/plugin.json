@@ -1,8 +1,8 @@
 {
   "id": "le-scanner",
   "name": "Last Epoch Scanner",
-  "version": "1.1.0",
-  "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use. Needs `le-scanner overlay` or `serve` running. As a phone tile it shows the running action; character stats are the Last Epoch Character tiles.",
+  "version": "1.2.0",
+  "description": "Runs le-scanner's actions (github.com/mike623/le-tool) from a button: scan the stash, import the character, equip the build in use, open the planner. Needs `le-scanner overlay` or `serve` running. On the phone, the Scan All Tabs button shows whatever le-scanner is running, and each other button its own action while it runs; character stats are the Last Epoch Character tiles.",
   "platforms": ["mac"],
   "fields": [
     { "id": "action", "label": "Action", "type": "select", "options": [
@@ -12,7 +12,8 @@
       { "value": "calibrate", "label": "Calibrate" },
       { "value": "import", "label": "Import Character" },
       { "value": "apply", "label": "Equip Build in Use" },
-      { "value": "unuse", "label": "Clear Build in Use" }
+      { "value": "unuse", "label": "Clear Build in Use" },
+      { "value": "planner", "label": "Open Planner", "note": "Shows le-scanner's planner window (the browser with `le-scanner serve`)." }
     ] },
     { "id": "tab", "label": "Tab", "type": "select", "options": [
       { "value": "ring", "label": "Ring" }, { "value": "amu", "label": "Amulet" }, { "value": "belt", "label": "Belt" },
@@ -20,8 +21,8 @@
       { "value": "boots", "label": "Boots" }, { "value": "relic", "label": "Relic" }
     ] }
   ],
-  "note": "Only Scan Open Tab uses Tab. Progress shows on the phone with the Last Epoch Scanner tile.",
+  "note": "Only Scan Open Tab uses Tab. On the phone, Scan All Tabs shows the progress of whatever le-scanner is running.",
   "label": "LE {action}",
   "run": { "exec": ["/bin/sh", "./run.sh", "{action}", "{tab}"] },
-  "live": { "exec": ["/bin/sh", "./status.sh"] }
+  "live": { "exec": ["/bin/sh", "./status.sh", "{action}"] }
 }

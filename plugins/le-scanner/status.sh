@@ -1,6 +1,7 @@
 #!/bin/sh
-# Phone tile, every second: the running action's last line, how the last one ended, else "ready".
-# Character stats are the Last Epoch Character plugin's tiles.
+# Phone button text, every second, for the button's action ($1). Scan All Tabs shows any action: the running
+# one's last line, how the last one ended, else "ready". Other buttons show only their own action, else
+# nothing (their label). Character stats are the Last Epoch Character plugin's tiles.
 API=http://127.0.0.1:8765/api
 get() { printf '%s' "$1" | plutil -extract "$2" raw -o - - 2>/dev/null; }
 while :; do
@@ -13,6 +14,7 @@ while :; do
     idle) line=ready ;;
     *) line=offline ;;
   esac
+  [ "$1" = scan-all ] || [ "$action" = "$1" ] || line=
   echo "$line"
   sleep 1
 done

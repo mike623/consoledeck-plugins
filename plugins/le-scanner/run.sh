@@ -3,6 +3,7 @@
 API=http://127.0.0.1:8765/api
 case "$1" in
   unuse) url=$API/unuse body= ;;
+  planner) url=$API/planner body= ;;
   scan-tab) url=$API/actions/scan-tab body="{\"tab\":\"$2\"}" ;;
   *) url=$API/actions/$1 body={} ;;
 esac
