@@ -72,6 +72,8 @@ def check(folder: Path):
         raise ValueError("nothing to run: add run")
     files = sorted(str(p.relative_to(folder)).replace("\\", "/") for p in folder.rglob("*") if p.is_file() and p.name != ".DS_Store")
     cmds = commands(m.get("run")) + commands(m.get("live"))
+    if m.get("contextsFrom"):
+        cmds.append(m["contextsFrom"])
     for f in m.get("fields", []):
         for o in f.get("options", []):
             cmds += commands(o.get("run"))

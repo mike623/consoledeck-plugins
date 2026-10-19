@@ -55,6 +55,7 @@ buttons store it as their `"type"` in deck.json.
 | `run` | what a press does (below) |
 | `live` | a long-running `exec` whose output lines show on a phone tile (`cpu`). A tile-only plugin whose first field is a `select` is added once per option, labelled by it (`le-character`) |
 | `contextFor` | app ids; the `live` command prints what's on in that app (a game), or an empty line for nothing. While that app is in front, ConsoleDeck uses the profile `<app id>/<line>`, falling back to the app's own (`boosteroid`) |
+| `contextsFrom` | with `contextFor`: a command printing the contexts seen before, newest first, one per line. The editor offers them when adding a game's profile ahead of time (`boosteroid` lists games from its logs) |
 
 ### Fields
 
