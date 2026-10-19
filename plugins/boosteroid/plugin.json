@@ -1,8 +1,8 @@
 {
   "id": "boosteroid",
   "name": "Boosteroid Game",
-  "version": "1.0.0",
-  "description": "Tells ConsoleDeck which game Boosteroid is streaming, so each game can have its own profile (Boosteroid · Last Epoch). Add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default.",
+  "version": "1.1.0",
+  "description": "Tells ConsoleDeck which game Boosteroid is streaming, so each game can have its own profile (Boosteroid · Last Epoch). Add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended.",
   "platforms": ["mac"],
   "contextFor": ["com.boosteroid.macclient"],
   "live": { "exec": ["/bin/sh", "./game.sh"] }

@@ -14,8 +14,8 @@
     {
       "id": "boosteroid",
       "name": "Boosteroid Game",
-      "version": "1.0.0",
-      "description": "Tells ConsoleDeck which game Boosteroid is streaming, so each game can have its own profile (Boosteroid · Last Epoch). Add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default.",
+      "version": "1.1.0",
+      "description": "Tells ConsoleDeck which game Boosteroid is streaming, so each game can have its own profile (Boosteroid · Last Epoch). Add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended.",
       "platforms": [
         "mac"
       ],
@@ -27,6 +27,48 @@
         [
           "/bin/sh",
           "./game.sh"
+        ]
+      ]
+    },
+    {
+      "id": "boosteroid-end",
+      "name": "Boosteroid End Session",
+      "version": "1.0.0",
+      "description": "Ends the Boosteroid stream by quitting Boosteroid, which tells the server to stop the session (same as closing its window). Asks first, since unsaved game progress is lost.",
+      "platforms": [
+        "mac"
+      ],
+      "files": [
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "/usr/bin/osascript",
+          "-e",
+          "display dialog \"End the Boosteroid session? Unsaved game progress is lost.\" buttons {\"Cancel\", \"End Session\"} default button \"Cancel\" cancel button \"Cancel\" giving up after 10 with icon caution",
+          "-e",
+          "if gave up of result then return",
+          "-e",
+          "tell application \"Boosteroid\" to quit"
+        ]
+      ]
+    },
+    {
+      "id": "boosteroid-idle",
+      "name": "Boosteroid Idle",
+      "version": "1.0.0",
+      "description": "Phone tile: time left before Boosteroid ends the stream for inactivity, with a chart of the idle time. Add it to the Boosteroid profile and every game's profile shows it.",
+      "platforms": [
+        "mac"
+      ],
+      "files": [
+        "idle.sh",
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "/bin/sh",
+          "./idle.sh"
         ]
       ]
     },

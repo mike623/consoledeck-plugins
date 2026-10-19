@@ -1,0 +1,11 @@
+{
+  "id": "boosteroid-end",
+  "name": "Boosteroid End Session",
+  "version": "1.0.0",
+  "description": "Ends the Boosteroid stream by quitting Boosteroid, which tells the server to stop the session (same as closing its window). Asks first, since unsaved game progress is lost.",
+  "platforms": ["mac"],
+  "run": { "exec": ["/usr/bin/osascript",
+    "-e", "display dialog \"End the Boosteroid session? Unsaved game progress is lost.\" buttons {\"Cancel\", \"End Session\"} default button \"Cancel\" cancel button \"Cancel\" giving up after 10 with icon caution",
+    "-e", "if gave up of result then return",
+    "-e", "tell application \"Boosteroid\" to quit"] }
+}
