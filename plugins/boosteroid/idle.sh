@@ -1,6 +1,6 @@
 #!/bin/sh
 # Time left before Boosteroid ends the stream for inactivity. It warns after ~8.5 min without input and
-# ends the session 2 min later (the Boosteroid Game plugin taps Shift on the warning). Only input while
+# ends the session 2 min later (game.sh taps Shift on the warning). Only input while
 # Boosteroid is in front reaches the stream, so idle time counts from the last input there.
 KICK=630 # ponytail: seconds, measured 18 Oct 2026 from bstr_client.log; change here if Boosteroid does
 last=$(date +%s)

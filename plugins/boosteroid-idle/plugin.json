@@ -1,8 +1,0 @@
-{
-  "id": "boosteroid-idle",
-  "name": "Boosteroid Idle",
-  "version": "1.0.0",
-  "description": "Phone tile: time left before Boosteroid ends the stream for inactivity, with a chart of the idle time. Add it to the Boosteroid profile and every game's profile shows it.",
-  "platforms": ["mac"],
-  "live": { "exec": ["/bin/sh", "./idle.sh"] }
-}

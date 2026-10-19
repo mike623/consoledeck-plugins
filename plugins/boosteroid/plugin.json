@@ -1,9 +1,19 @@
 {
   "id": "boosteroid",
-  "name": "Boosteroid Game",
-  "version": "1.1.0",
-  "description": "Tells ConsoleDeck which game Boosteroid is streaming, so each game can have its own profile (Boosteroid · Last Epoch). Add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended.",
+  "name": "Boosteroid",
+  "version": "1.2.0",
+  "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Put the idle countdown under Phone shows and End Session on a button in the Boosteroid profile, and every game's profile has them.",
   "platforms": ["mac"],
   "contextFor": ["com.boosteroid.macclient"],
-  "live": { "exec": ["/bin/sh", "./game.sh"] }
+  "fields": [
+    { "id": "action", "label": "Action", "type": "select", "options": [
+      { "value": "end", "label": "End Session", "note": "Quits Boosteroid, which stops the stream on the server. Asks first, since unsaved game progress is lost.",
+        "run": { "exec": ["/usr/bin/osascript",
+          "-e", "display dialog \"End the Boosteroid session? Unsaved game progress is lost.\" buttons {\"Cancel\", \"End Session\"} default button \"Cancel\" cancel button \"Cancel\" giving up after 10 with icon caution",
+          "-e", "if gave up of result then return",
+          "-e", "tell application \"Boosteroid\" to quit"] } },
+      { "value": "idle", "label": "Idle Countdown", "note": "A phone tile: add it under Phone shows. Time left before Boosteroid ends the stream for inactivity." }
+    ] }
+  ],
+  "live": { "exec": ["/bin/sh", "./game.sh", "{action}"] }
 }

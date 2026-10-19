@@ -4,7 +4,9 @@
 # Keeps the stream from timing out: Boosteroid warns ("Inactivity dialog shown") after ~8.5 min without
 # input and ends the session 2 min later, so on a warning it taps Shift. This runs only while Boosteroid
 # is in front, so the key lands there.
+# With an argument it's a phone tile instead: "idle" is the countdown (idle.sh); others show nothing.
 # A loop, not tail -F: ConsoleDeck kills this shell, and a tail in a pipeline would outlive it.
+case $1 in idle) exec /bin/sh ./idle.sh ;; ?*) exit ;; esac
 LOG="$HOME/Library/Application Support/Boosteroid Games S.R.L./bstr_client.log"
 off=0 game= shown=x first=1
 while :; do

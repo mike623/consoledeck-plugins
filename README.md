@@ -18,9 +18,7 @@ inside the app, so a fresh install works offline.
 | `cpu` CPU Usage | phone tile: CPU usage, with a chart |
 | `memory` Memory Usage | phone tile: memory used, like Activity Monitor, with a chart |
 | `network` Network Usage | phone tile: download/upload speed, with a chart |
-| `boosteroid` Boosteroid Game | a profile per game streamed in Boosteroid; keeps an idle stream alive (Mac) |
-| `boosteroid-idle` Boosteroid Idle | phone tile: time left before Boosteroid ends an idle stream (Mac) |
-| `boosteroid-end` Boosteroid End Session | button: ends the stream (quits Boosteroid), after a confirm (Mac) |
+| `boosteroid` Boosteroid | a profile per game streamed in Boosteroid; keeps an idle stream alive; idle countdown tile; End Session button (Mac) |
 | `le-scanner` Last Epoch Scanner | runs [le-scanner](https://github.com/mike623/le-tool) actions; phone tile shows progress (Mac) |
 | `le-character` Last Epoch Character | phone tiles with le-scanner's character stats: level, health, resistances... (Mac) |
 | `satisfactory` Satisfactory | opens Satisfactory Calculator blueprints, interactive map, or one blueprint |
