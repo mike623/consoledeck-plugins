@@ -14,12 +14,13 @@
     {
       "id": "boosteroid",
       "name": "Boosteroid",
-      "version": "1.2.0",
-      "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Put the idle countdown under Phone shows and End Session on a button in the Boosteroid profile, and every game's profile has them.",
+      "version": "1.4.0",
+      "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Toggle AFK on a button keeps the Mac awake and taps a random key every few minutes while you are away; on the phone that button counts down to the inactivity kick. Put End Session and Toggle AFK on buttons in the Boosteroid profile, and every game's profile has them.",
       "platforms": [
         "mac"
       ],
       "files": [
+        "afk.sh",
         "game.sh",
         "idle.sh",
         "plugin.json"
@@ -38,6 +39,10 @@
           "if gave up of result then return",
           "-e",
           "tell application \"Boosteroid\" to quit"
+        ],
+        [
+          "/bin/sh",
+          "./afk.sh"
         ]
       ]
     },

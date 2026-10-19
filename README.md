@@ -18,7 +18,7 @@ inside the app, so a fresh install works offline.
 | `cpu` CPU Usage | phone tile: CPU usage, with a chart |
 | `memory` Memory Usage | phone tile: memory used, like Activity Monitor, with a chart |
 | `network` Network Usage | phone tile: download/upload speed, with a chart |
-| `boosteroid` Boosteroid | a profile per game streamed in Boosteroid; keeps an idle stream alive; idle countdown tile; End Session button (Mac) |
+| `boosteroid` Boosteroid | a profile per game streamed in Boosteroid; keeps an idle stream alive; AFK toggle button that counts down to the idle kick on the phone; End Session button (Mac) |
 | `le-scanner` Last Epoch Scanner | runs [le-scanner](https://github.com/mike623/le-tool) actions; phone tile shows progress (Mac) |
 | `le-character` Last Epoch Character | phone tiles with le-scanner's character stats: level, health, resistances... (Mac) |
 | `satisfactory` Satisfactory | opens Satisfactory Calculator blueprints, interactive map, or one blueprint |
@@ -88,7 +88,8 @@ A select option's own `run` wins over the plugin's.
 
 `live` is a command that keeps running (`exec`, or per-OS `exec` under `mac` / `windows`). Each line it prints becomes
 the text of a tile on the Phone Companion, shown apart from the buttons (**Phone shows** in the Actions window). It runs
-only while the companion is on. A plugin with `live` needs no `run`; without one it isn't offered for buttons. Print a
+only while the companion is on. A plugin with `live` needs no `run`; without one it isn't offered for buttons. With both,
+a button's press shows the line on the phone in place of its label, and pressing it runs `run` (`boosteroid` Toggle AFK). Print a
 line and flush, e.g. `fflush()` in awk. Tab-separated numbers after the text (`26%<TAB>0.26`, with a dot) add a chart of the
 last minute under it, one line per number (green, then red). Its top is 1, or the biggest number shown, so give 0 to 1
 for a share, or raw values like bytes per second.

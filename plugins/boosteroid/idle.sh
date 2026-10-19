@@ -1,6 +1,6 @@
 #!/bin/sh
 # Time left before Boosteroid ends the stream for inactivity. It warns after ~8.5 min without input and
-# ends the session 2 min later (game.sh taps Shift on the warning). Only input while
+# ends the session 2 min later (game.sh taps Shift on the warning; AFK mode, afk.sh, taps every few min). Only input while
 # Boosteroid is in front reaches the stream, so idle time counts from the last input there.
 KICK=630 # ponytail: seconds, measured 18 Oct 2026 from bstr_client.log; change here if Boosteroid does
 last=$(date +%s)
@@ -16,7 +16,8 @@ while :; do
     esac
     gone=$((now - last)) left=$((KICK - now + last))
     [ "$left" -lt 0 ] && left=0
-    printf 'Kick in %d:%02d\t%s\n' $((left / 60)) $((left % 60)) "$(echo "scale=2; $gone / $KICK" | bc)"
+    afk=; [ -s "${TMPDIR:-/tmp}/consoledeck-boosteroid-afk.pid" ] && afk='AFK · '
+    printf '%sKick in %d:%02d\t%s\n' "$afk" $((left / 60)) $((left % 60)) "$(echo "scale=2; $gone / $KICK" | bc)"
   fi
   sleep 1
 done
