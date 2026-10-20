@@ -18,6 +18,7 @@ inside the app, so a fresh install works offline.
 | `cpu` CPU Usage | phone tile: CPU usage, with a chart |
 | `memory` Memory Usage | phone tile: memory used, like Activity Monitor, with a chart |
 | `network` Network Usage | phone tile: download/upload speed, with a chart |
+| `netinfo` Network Info | pops up IPs, Wi-Fi network, router, DNS, MAC, public IP; stays open until closed, copy any row |
 | `boosteroid` Boosteroid | a profile per game streamed in Boosteroid; keeps an idle stream alive; AFK toggle button that counts down to the idle kick on the phone; End Session button (Mac) |
 | `le-scanner` Last Epoch Scanner | runs [le-scanner](https://github.com/mike623/le-tool) actions; phone tile shows progress (Mac) |
 | `le-character` Last Epoch Character | phone tiles with le-scanner's character stats: level, health, resistances... (Mac) |

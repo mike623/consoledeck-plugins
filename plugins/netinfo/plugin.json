@@ -1,0 +1,15 @@
+{
+  "id": "netinfo",
+  "name": "Network Info",
+  "version": "1.0.0",
+  "description": "Pops up this computer's network details: IP address, subnet, Wi-Fi network, router, DNS, MAC address of each connected interface (VPNs too), the computer's name and, if you choose, the public IP. The window stays open until you close it, so you can copy several: pick a row and Copy (or double-click it on Windows).",
+  "fields": [{ "id": "public", "label": "Public IP", "type": "select", "options": [
+    { "value": "public", "label": "Look it up", "note": "Asks api.ipify.org, which takes up to 3 seconds." },
+    { "value": "local", "label": "Don't look it up" }
+  ] }],
+  "label": "Net Info",
+  "run": {
+    "mac": { "exec": ["/bin/sh", "./netinfo.sh", "{public}"] },
+    "windows": { "exec": ["powershell", "-NoProfile", "-Sta", "-ExecutionPolicy", "Bypass", "-WindowStyle", "Hidden", "-File", "./netinfo.ps1", "{public}"] }
+  }
+}
