@@ -16,7 +16,7 @@ while :; do
     esac
     gone=$((now - last)) left=$((KICK - now + last))
     [ "$left" -lt 0 ] && left=0
-    afk=; [ -s "${TMPDIR:-/tmp}/consoledeck-boosteroid-afk.pid" ] && afk='AFK · '
+    afk='AFK off · '; [ -s "${TMPDIR:-/tmp}/consoledeck-boosteroid-afk.pid" ] && afk='AFK on · '
     printf '%sKick in %d:%02d\t%s\n' "$afk" $((left / 60)) $((left % 60)) "$(echo "scale=2; $gone / $KICK" | bc)"
   fi
   sleep 1

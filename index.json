@@ -14,7 +14,7 @@
     {
       "id": "boosteroid",
       "name": "Boosteroid",
-      "version": "1.5.0",
+      "version": "1.5.3",
       "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front, or ahead of time from Boosteroid Game…, which offers the games you streamed before; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Toggle AFK on a button keeps the Mac awake and taps a random key every few minutes while you are away; on the phone that button counts down to the inactivity kick. Put End Session and Toggle AFK on buttons in the Boosteroid profile, and every game's profile has them.",
       "platforms": [
         "mac"
