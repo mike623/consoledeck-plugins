@@ -1,8 +1,8 @@
 {
   "id": "boosteroid",
   "name": "Boosteroid",
-  "version": "1.5.3",
-  "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front, or ahead of time from Boosteroid Game…, which offers the games you streamed before; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Toggle AFK on a button keeps the Mac awake and taps a random key every few minutes while you are away; on the phone that button counts down to the inactivity kick. Put End Session and Toggle AFK on buttons in the Boosteroid profile, and every game's profile has them.",
+  "version": "1.5.5",
+  "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front, or ahead of time from Boosteroid Game…, which offers the games you streamed before; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Toggle AFK on a button keeps the Mac awake and taps a random key after 5 min without input, so it can stay on while you play; on the phone that button counts down to the inactivity kick. Put End Session and Toggle AFK on buttons in the Boosteroid profile, and every game's profile has them.",
   "platforms": ["mac"],
   "contextFor": ["com.boosteroid.macclient"],
   "contextsFrom": ["/bin/sh", "./games.sh"],
@@ -13,7 +13,7 @@
           "-e", "display dialog \"End the Boosteroid session? Unsaved game progress is lost.\" buttons {\"Cancel\", \"End Session\"} default button \"Cancel\" cancel button \"Cancel\" giving up after 10 with icon caution",
           "-e", "if gave up of result then return",
           "-e", "tell application \"Boosteroid\" to quit"] } },
-      { "value": "afk", "label": "Toggle AFK", "note": "Press to start, again to stop. On the phone the button shows the time left before Boosteroid ends the stream for inactivity. Keeps the Mac awake and taps Shift, Option or Control every 2-5 min while Boosteroid is in front, so a stream left alone isn't ended. Stops by itself when Boosteroid quits.",
+      { "value": "afk", "label": "Toggle AFK", "note": "Press to start, again to stop. On the phone the button shows the time left before Boosteroid ends the stream for inactivity. Keeps the Mac awake and, after 5 min with no input to Boosteroid, taps Shift, Option or Control (bringing Boosteroid to the front if another app is there), so a stream left alone isn't ended. Safe to leave on while playing: your own input resets the count. Stops by itself when Boosteroid quits.",
         "run": { "exec": ["/bin/sh", "./afk.sh"] } }
     ] }
   ],
