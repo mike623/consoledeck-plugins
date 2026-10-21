@@ -199,6 +199,36 @@
       ]
     },
     {
+      "id": "openusage",
+      "name": "AI Usage",
+      "version": "1.0.0",
+      "description": "Shows how much of an AI coding plan you've used (Claude, Codex, Cursor…) and when it resets, refreshed every 30 seconds: session use and a countdown, with a chart of session (green) and weekly (red) use. Reads the OpenUsage app's local API on this Mac only. Pressing the button opens OpenUsage.",
+      "platforms": [
+        "mac"
+      ],
+      "files": [
+        "plugin.json",
+        "providers.sh",
+        "usage.sh"
+      ],
+      "commands": [
+        [
+          "/usr/bin/open",
+          "-a",
+          "OpenUsage"
+        ],
+        [
+          "/bin/sh",
+          "./usage.sh",
+          "{provider}"
+        ],
+        [
+          "/bin/sh",
+          "./providers.sh"
+        ]
+      ]
+    },
+    {
       "id": "password",
       "name": "Type Password",
       "version": "1.0.0",
