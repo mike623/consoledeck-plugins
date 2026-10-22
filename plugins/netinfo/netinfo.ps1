@@ -17,6 +17,8 @@ foreach ($c in Get-NetIPConfiguration | Where-Object { $_.NetAdapter.Status -eq 
   Row "$n MAC" $c.NetAdapter.MacAddress
 }
 if ($args[0] -eq 'public') {
+  # PowerShell 5.1 may default to TLS 1.0, which api.ipify.org refuses.
+  [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor 'Tls12'
   try { Row 'Public IP' (Invoke-RestMethod -Uri 'https://api.ipify.org' -TimeoutSec 3) } catch {}
 }
 Row 'Computer Name' $env:COMPUTERNAME

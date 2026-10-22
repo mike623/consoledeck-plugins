@@ -14,7 +14,7 @@ while IFS="$tab" read -r dev name; do
   row "$name IP" "$ip"
   ssid=$(ipconfig getsummary "$dev" 2>/dev/null | awk -F ' SSID : ' '/ SSID : / { print $2; exit }')
   [ "$ssid" = "<redacted>" ] || row "$name Network" "$ssid"
-  row "$name Subnet Mask" "$(ipconfig getoption "$dev" subnet_mask 2>/dev/null)"
+  row "$name Subnet" "$(ipconfig getoption "$dev" subnet_mask 2>/dev/null)"
   row "$name IPv6" "$(ifconfig "$dev" | awk '/inet6 / && $2 !~ /^fe80/ { print $2; exit }')"
   row "$name MAC" "$(ifconfig "$dev" | awk '/ether / { print $2; exit }')"
 done <<PORTS
@@ -31,7 +31,7 @@ row "Default Interface" "$(echo "$route" | awk '/interface:/ { print $2 }')"
 row "DNS" "$(scutil --dns | awk '/nameserver\[[0-9]+\]/ && !seen[$3]++ { s = s (s ? ", " : "") $3 } END { print s }')"
 [ "$1" = public ] && row "Public IP" "$(curl -fsS -m 3 https://api.ipify.org 2>/dev/null)"
 row "Computer Name" "$(scutil --get ComputerName 2>/dev/null)"
-row "Local Hostname" "$(scutil --get LocalHostName 2>/dev/null).local"
+host=$(scutil --get LocalHostName 2>/dev/null) && row "Local Hostname" "$host.local"
 [ -n "$rows" ] || rows="Network: not connected
 "
 
