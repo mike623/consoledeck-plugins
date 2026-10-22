@@ -1,0 +1,12 @@
+{
+  "id": "openusage",
+  "name": "AI Usage",
+  "version": "1.0.0",
+  "description": "Shows how much of an AI coding plan you've used (Claude, Codex, Cursor…) and when it resets, refreshed every 30 seconds: session use and a countdown, with a chart of session (green) and weekly (red) use. Reads the OpenUsage app's local API on this Mac only. Pressing the button opens OpenUsage.",
+  "label": "AI",
+  "platforms": ["mac"],
+  "fields": [{ "id": "provider", "label": "Provider", "type": "select", "optionsFrom": ["/bin/sh", "./providers.sh"] }],
+  "note": "Needs OpenUsage (github.com/robinebers/openusage) running: brew install --cask openusage.",
+  "run": { "exec": ["/usr/bin/open", "-a", "OpenUsage"] },
+  "live": { "exec": ["/bin/sh", "./usage.sh", "{provider}"] }
+}

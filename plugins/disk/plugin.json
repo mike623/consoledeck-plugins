@@ -1,0 +1,11 @@
+{
+  "id": "disk",
+  "name": "Disk Space",
+  "version": "1.0.0",
+  "description": "Shows free space on the startup disk in GB, like Finder, updated every 30 seconds. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
+  "label": "Disk",
+  "live": {
+    "mac": { "exec": ["/bin/sh", "./disk.sh"] },
+    "windows": { "exec": ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "./disk.ps1"] }
+  }
+}

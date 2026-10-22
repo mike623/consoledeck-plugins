@@ -14,8 +14,8 @@
     {
       "id": "boosteroid",
       "name": "Boosteroid",
-      "version": "1.5.0",
-      "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front, or ahead of time from Boosteroid Game…, which offers the games you streamed before; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Toggle AFK on a button keeps the Mac awake and taps a random key every few minutes while you are away; on the phone that button counts down to the inactivity kick. Put End Session and Toggle AFK on buttons in the Boosteroid profile, and every game's profile has them.",
+      "version": "1.5.5",
+      "description": "Everything for Boosteroid. Tells ConsoleDeck which game it's streaming, so each game can have its own profile (Boosteroid · Last Epoch): add one from the + menu while the game is in front, or ahead of time from Boosteroid Game…, which offers the games you streamed before; it falls back to the Boosteroid profile, then Default. While Boosteroid is in front it taps Shift when Boosteroid warns of inactivity, so the stream isn't ended. Toggle AFK on a button keeps the Mac awake and taps a random key after 5 min without input, so it can stay on while you play; on the phone that button counts down to the inactivity kick. Put End Session and Toggle AFK on buttons in the Boosteroid profile, and every game's profile has them.",
       "platforms": [
         "mac"
       ],
@@ -74,6 +74,32 @@
           "Bypass",
           "-File",
           "./cpu.ps1"
+        ]
+      ]
+    },
+    {
+      "id": "disk",
+      "name": "Disk Space",
+      "version": "1.0.0",
+      "description": "Shows free space on the startup disk in GB, like Finder, updated every 30 seconds. A tile on the Phone Companion, apart from the buttons: add it under Phone shows in the Actions window.",
+      "platforms": [],
+      "files": [
+        "disk.ps1",
+        "disk.sh",
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "/bin/sh",
+          "./disk.sh"
+        ],
+        [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "./disk.ps1"
         ]
       ]
     },
@@ -226,6 +252,36 @@
           "Bypass",
           "-File",
           "./network.ps1"
+        ]
+      ]
+    },
+    {
+      "id": "openusage",
+      "name": "AI Usage",
+      "version": "1.0.0",
+      "description": "Shows how much of an AI coding plan you've used (Claude, Codex, Cursor…) and when it resets, refreshed every 30 seconds: session use and a countdown, with a chart of session (green) and weekly (red) use. Reads the OpenUsage app's local API on this Mac only. Pressing the button opens OpenUsage.",
+      "platforms": [
+        "mac"
+      ],
+      "files": [
+        "plugin.json",
+        "providers.sh",
+        "usage.sh"
+      ],
+      "commands": [
+        [
+          "/usr/bin/open",
+          "-a",
+          "OpenUsage"
+        ],
+        [
+          "/bin/sh",
+          "./usage.sh",
+          "{provider}"
+        ],
+        [
+          "/bin/sh",
+          "./providers.sh"
         ]
       ]
     },
