@@ -199,6 +199,37 @@
       ]
     },
     {
+      "id": "netinfo",
+      "name": "Network Info",
+      "version": "1.0.0",
+      "description": "Pops up this computer's network details: IP address, subnet, Wi-Fi network, router, DNS, MAC address of each connected interface (VPNs too), the computer's name and, if you choose, the public IP. The window stays open until you close it, so you can copy several: pick a row and Copy (or double-click it on Windows).",
+      "platforms": [],
+      "files": [
+        "netinfo.ps1",
+        "netinfo.sh",
+        "plugin.json"
+      ],
+      "commands": [
+        [
+          "/bin/sh",
+          "./netinfo.sh",
+          "{public}"
+        ],
+        [
+          "powershell",
+          "-NoProfile",
+          "-Sta",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-WindowStyle",
+          "Hidden",
+          "-File",
+          "./netinfo.ps1",
+          "{public}"
+        ]
+      ]
+    },
+    {
       "id": "network",
       "name": "Network Usage",
       "version": "1.2.0",
